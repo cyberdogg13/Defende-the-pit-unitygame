@@ -13,6 +13,8 @@ public class gamemanager : MonoBehaviour
     public Button restartButton;
     public bool Gameisrunning;
     public GameObject Titlescreen;
+    public TextMeshProUGUI enemiesleftText;
+    public int enemiesLeft;
 
 
     // Start is called before the first frame update
@@ -27,7 +29,8 @@ public class gamemanager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-     
+        enemiesLeft = GameObject.FindGameObjectsWithTag("enemy").Length;
+        enemiesleftText.text = "Enemiesleft: " + enemiesLeft; 
     }
     public void UpdateScore(int ScoreToAdd)
     {
