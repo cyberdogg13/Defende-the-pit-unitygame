@@ -15,11 +15,13 @@ public class gamemanager : MonoBehaviour
     public GameObject Titlescreen;
     public TextMeshProUGUI enemiesleftText;
     public int enemiesLeft;
+    public TextMeshProUGUI wingameText;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        wingameText.gameObject.SetActive(false);
         Titlescreen.gameObject.SetActive(true);
         Gameisrunning = false; 
         gameoverText.gameObject.SetActive(false);
@@ -30,7 +32,13 @@ public class gamemanager : MonoBehaviour
     void Update()
     {
         enemiesLeft = GameObject.FindGameObjectsWithTag("enemy").Length;
-        enemiesleftText.text = "Enemiesleft: " + enemiesLeft; 
+        enemiesleftText.text = "Enemiesleft: " + enemiesLeft;
+        if (score == 50)
+        {
+            Gameisrunning = false;
+            restartButton.gameObject.SetActive(true);
+            wingameText.gameObject.SetActive(true);
+        }
     }
     public void UpdateScore(int ScoreToAdd)
     {

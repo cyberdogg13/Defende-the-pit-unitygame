@@ -6,6 +6,7 @@ public class playerController : MonoBehaviour
 {
     public GameObject bulletprefab;
     public gamemanager Gamemanager;
+    public float firerate = 0.45f;
 
     //berekening voor het maken van een hoekgraad tussen 2 punten door punt A de X en Y waardes af te trekken van de X en Y waardes van punt B
     private float AngleBetweenTwoPoints(Vector3 a, Vector3 b)
@@ -23,6 +24,8 @@ public class playerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log("firerate= " + firerate);
+        firerate -= Time.deltaTime;
         if (Gamemanager.Gameisrunning == true)
         {
             Vector3 mouselocation = Input.mousePosition;
@@ -34,8 +37,9 @@ public class playerController : MonoBehaviour
                 transform.LookAt(hit.point);
             }
             // creeert een kogel 
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0) && firerate <= 0)
             {
+                firerate = 0.45f;
                 Vector3 rot = transform.rotation.eulerAngles;
                 rot = new Vector3(rot.x, rot.y, rot.z + 270);
                 Instantiate(bulletprefab, transform.position, Quaternion.Euler(rot));
