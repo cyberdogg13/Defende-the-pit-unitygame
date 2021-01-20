@@ -24,7 +24,7 @@ public class playerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("firerate= " + firerate);
+       // Debug.Log("firerate= " + firerate);
         firerate -= Time.deltaTime;
         if (Gamemanager.Gameisrunning == true)
         {

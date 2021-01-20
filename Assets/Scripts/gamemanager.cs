@@ -16,6 +16,7 @@ public class gamemanager : MonoBehaviour
     public TextMeshProUGUI enemiesleftText;
     public int enemiesLeft;
     public TextMeshProUGUI wingameText;
+    public int winscore = 100;
 
 
     // Start is called before the first frame update
@@ -33,7 +34,7 @@ public class gamemanager : MonoBehaviour
     {
         enemiesLeft = GameObject.FindGameObjectsWithTag("enemy").Length;
         enemiesleftText.text = "Enemiesleft: " + enemiesLeft;
-        if (score == 250)
+        if (score == winscore)
         {
             Gameisrunning = false;
             restartButton.gameObject.SetActive(true);
