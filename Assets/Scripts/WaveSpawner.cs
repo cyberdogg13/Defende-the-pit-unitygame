@@ -14,6 +14,8 @@ public class WaveSpawner : MonoBehaviour
     public gamemanager Gamemanager;
     public float timeBetweenWaves = 5f;
     private float countdown = 2f;
+    private int wavenumber = 0;
+    private int enemiestospawn = 10;
 
     // Start is called before the first frame update
     void Start()
@@ -40,7 +42,9 @@ public class WaveSpawner : MonoBehaviour
 
     IEnumerator spawnwave()
     {
-        for (int i = 0; i < 10; i++)
+        wavenumber += 1;
+
+        for (int i = 0; i < enemiestospawn * wavenumber; i++)
         {
             spawnbadguy();
             yield return new WaitForSeconds(0.2f);

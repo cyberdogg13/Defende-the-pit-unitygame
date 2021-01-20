@@ -31,13 +31,13 @@ public class playerController : MonoBehaviour
             Vector3 mouselocation = Input.mousePosition;
             RaycastHit hit;
             Ray ray = Camera.main.ScreenPointToRay(mouselocation);
-            if (Physics.Raycast(ray, out hit))
+            if (Physics.Raycast(ray, out hit) && Gamemanager.Gameisrunning)
             {
                 Debug.DrawRay(transform.position, hit.point, Color.green);
                 transform.LookAt(hit.point);
             }
             // creeert een kogel 
-            if (Input.GetMouseButtonDown(0) && firerate <= 0)
+            if (Input.GetMouseButtonDown(0) && firerate <= 0 && Gamemanager.Gameisrunning)
             {
                 firerate = 0.45f;
                 Vector3 rot = transform.rotation.eulerAngles;

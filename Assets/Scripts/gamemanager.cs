@@ -33,7 +33,7 @@ public class gamemanager : MonoBehaviour
     {
         enemiesLeft = GameObject.FindGameObjectsWithTag("enemy").Length;
         enemiesleftText.text = "Enemiesleft: " + enemiesLeft;
-        if (score == 50)
+        if (score == 250)
         {
             Gameisrunning = false;
             restartButton.gameObject.SetActive(true);
@@ -50,6 +50,7 @@ public class gamemanager : MonoBehaviour
     {
         gameoverText.gameObject.SetActive(true);
         restartButton.gameObject.SetActive(true);
+        Gameisrunning = false;
 
     }
     public void startgame()
