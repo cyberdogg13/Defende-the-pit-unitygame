@@ -197,18 +197,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 72337124}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 924452654}
-        m_MethodName: startgame
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &72337124
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -253,9 +242,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 72337121}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7761e7663e62cae43a2f77cb772cca1f, type: 3}
+  m_Script: {fileID: 11500000, guid: e4814bcea5ad7c24bb9d1f64c96f2a02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  difficulty: 4
 --- !u!1 &76922689
 GameObject:
   m_ObjectHideFlags: 0
@@ -533,18 +523,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 165922084}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 924452654}
-        m_MethodName: startgame
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &165922084
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -589,9 +568,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 165922081}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7761e7663e62cae43a2f77cb772cca1f, type: 3}
+  m_Script: {fileID: 11500000, guid: e4814bcea5ad7c24bb9d1f64c96f2a02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  difficulty: 1
 --- !u!1 &170076733
 GameObject:
   m_ObjectHideFlags: 0
@@ -2110,18 +2090,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 519056422}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 924452654}
-        m_MethodName: startgame
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &519056422
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2166,9 +2135,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 519056419}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7761e7663e62cae43a2f77cb772cca1f, type: 3}
+  m_Script: {fileID: 11500000, guid: e4814bcea5ad7c24bb9d1f64c96f2a02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  difficulty: 2
 --- !u!1 &522528953 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7166259239455210438, guid: e125ee33af41143b8becc869e2706998,
@@ -3756,6 +3726,7 @@ MonoBehaviour:
   enemiesleftText: {fileID: 513352477}
   enemiesLeft: 0
   wingameText: {fileID: 1348715619}
+  winscore: 100
 --- !u!4 &924452655
 Transform:
   m_ObjectHideFlags: 0

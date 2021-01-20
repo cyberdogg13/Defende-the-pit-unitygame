@@ -16,7 +16,7 @@ public class gamemanager : MonoBehaviour
     public TextMeshProUGUI enemiesleftText;
     public int enemiesLeft;
     public TextMeshProUGUI wingameText;
-    public int winscore = 100;
+    public int winscore;
 
 
     // Start is called before the first frame update
@@ -54,8 +54,9 @@ public class gamemanager : MonoBehaviour
         Gameisrunning = false;
 
     }
-    public void startgame()
+    public void startgame(int difficulty)
     {
+        winscore = 75 * difficulty;
         score = 0;
         scoreText.text = "score: " + score;
         Gameisrunning = true;
