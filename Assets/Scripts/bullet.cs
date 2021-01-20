@@ -10,8 +10,6 @@ public class bullet : MonoBehaviour
     void Start()
     {
         Gamemanager = GameObject.Find("gamemanager").GetComponent<gamemanager>();
-
-
     }
 
     // Update is called once per frame

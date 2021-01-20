@@ -107,6 +107,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Gamemanager: {fileID: 0}
+  deathSound: {fileID: 8300000, guid: 6f3bba21d5438b545ab5b8f0e0fa68e7, type: 3}
 --- !u!54 &7818431665206884730
 Rigidbody:
   m_ObjectHideFlags: 0

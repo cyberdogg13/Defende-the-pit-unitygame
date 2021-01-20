@@ -10,6 +10,7 @@ public class badguy : MonoBehaviour
     private float speed = 5.0f;
     public gamemanager Gamemanager;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,9 +18,6 @@ public class badguy : MonoBehaviour
         player = GameObject.Find("Player");
         badguyRb = GetComponent<Rigidbody>();
         transform.LookAt(player.transform.position);
-       
-        
-
     }
 
     // Update is called once per frame

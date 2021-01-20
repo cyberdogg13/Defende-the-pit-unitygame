@@ -7,6 +7,9 @@ public class playerController : MonoBehaviour
     public GameObject bulletprefab;
     public gamemanager Gamemanager;
     public float firerate = 0.45f;
+    public AudioSource playerAudio;
+    public AudioClip fireSound;
+
 
     //berekening voor het maken van een hoekgraad tussen 2 punten door punt A de X en Y waardes af te trekken van de X en Y waardes van punt B
     private float AngleBetweenTwoPoints(Vector3 a, Vector3 b)
@@ -17,6 +20,7 @@ public class playerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        playerAudio = GetComponent<AudioSource>();
         Gamemanager = GameObject.Find("gamemanager").GetComponent<gamemanager>();
 
     }
@@ -39,6 +43,7 @@ public class playerController : MonoBehaviour
             // creeert een kogel 
             if (Input.GetMouseButtonDown(0) && firerate <= 0 && Gamemanager.Gameisrunning)
             {
+                playerAudio.PlayOneShot(fireSound, 1.0f);
                 firerate = 0.45f;
                 Vector3 rot = transform.rotation.eulerAngles;
                 rot = new Vector3(rot.x, rot.y, rot.z + 270);
