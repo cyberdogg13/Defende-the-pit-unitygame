@@ -7,7 +7,7 @@ public class badguy : MonoBehaviour
 
     private Rigidbody badguyRb;
     private GameObject player;
-    private float speed = 5.0f;
+    private float speed = 280.0f;
     public gamemanager Gamemanager;
     public AudioSource badguyAudio;
     public AudioClip deathSound;
@@ -33,7 +33,7 @@ public class badguy : MonoBehaviour
         if (Gamemanager.Gameisrunning == true)
         {
             Vector3 lookDirection = (player.transform.position - transform.position).normalized;
-            badguyRb.AddForce(lookDirection * speed);
+            badguyRb.AddForce(lookDirection * speed * Time.deltaTime);
         }
 
         // als de badguy in het gat valt verwijder deze en voer uit game over
