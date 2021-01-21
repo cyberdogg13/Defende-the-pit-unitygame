@@ -9,6 +9,7 @@ public class playerController : MonoBehaviour
     public float firerate = 0.45f;
     public AudioSource playerAudio;
     public AudioClip fireSound;
+ 
 
 
     //berekening voor het maken van een hoekgraad tussen 2 punten door punt A de X en Y waardes af te trekken van de X en Y waardes van punt B

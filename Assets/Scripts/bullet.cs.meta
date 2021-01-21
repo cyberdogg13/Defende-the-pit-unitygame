@@ -3,7 +3,10 @@ guid: 0b8c93296075aff4da5f5aeb0b5975a3
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - Gamemanager: {instanceID: 0}
+  - bulletAudio: {instanceID: 0}
+  - killSound: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

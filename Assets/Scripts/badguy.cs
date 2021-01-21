@@ -9,11 +9,14 @@ public class badguy : MonoBehaviour
     private GameObject player;
     private float speed = 5.0f;
     public gamemanager Gamemanager;
+    public AudioSource badguyAudio;
+    public AudioClip deathSound;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        badguyAudio = GetComponent<AudioSource>();
         Gamemanager = GameObject.Find("gamemanager").GetComponent<gamemanager>();
         player = GameObject.Find("Player");
         badguyRb = GetComponent<Rigidbody>();
@@ -29,12 +32,20 @@ public class badguy : MonoBehaviour
             badguyRb.AddForce(lookDirection * speed);
         }
 
-        if (transform.position.y < -10)
+        if (transform.position.y <= -5f)
         {
-            Destroy(gameObject);
             Debug.Log("game Over!");
-            Gamemanager.gameover();
+            Gamemanager.gameover();        
+            Destroy(gameObject, deathSound.length);
+            if(!badguyAudio.isPlaying)
+            {
+                badguyAudio.PlayOneShot(deathSound, 1f);
+            }
+            
+
 
         }
+
+        
     }
 }

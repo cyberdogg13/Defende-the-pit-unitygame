@@ -5,10 +5,13 @@ using UnityEngine;
 public class bullet : MonoBehaviour
 {
     public gamemanager Gamemanager;
+    public AudioSource bulletAudio;
+    public AudioClip killSound;
 
     // Start is called before the first frame update
     void Start()
     {
+        bulletAudio = GetComponent<AudioSource>();
         Gamemanager = GameObject.Find("gamemanager").GetComponent<gamemanager>();
     }
 
@@ -28,7 +31,7 @@ public class bullet : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("wall") || collision.gameObject.CompareTag("floor"))
+        if (collision.gameObject.CompareTag("wall") || collision.gameObject.CompareTag("floor") && !bulletAudio.isPlaying)
         {
             Destroy(gameObject);
             Debug.Log("kogel raakt een muur/vloer");
@@ -36,11 +39,18 @@ public class bullet : MonoBehaviour
 
         if (collision.gameObject.CompareTag("enemy"))
         {
+            GetComponent<Collider>().enabled = false;
+            GetComponent<TrailRenderer>().enabled = false;
+            gameObject.transform.localScale = new Vector3(0f, 0f, 0f);
             Destroy(collision.gameObject);
-            Destroy(gameObject);
+            Destroy(gameObject, killSound.length);
             Debug.Log("kogel raakt een enemy");
             Gamemanager.UpdateScore(5);
+            bulletAudio.PlayOneShot(killSound, 1f);
+
+
         }
+        
        
 
 
