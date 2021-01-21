@@ -6,10 +6,6 @@ public class WaveSpawner : MonoBehaviour
 {
     public GameObject enemy;
     public List<GameObject> spawnpoints;
-    // public GameObject positionSpawnN;
-    // public GameObject positionSpawnO;
-    // public GameObject positionSpawnS;
-    // public GameObject positionSpawnW;
     public float xoffset;
     public float yoffset;
     public gamemanager Gamemanager;
@@ -20,14 +16,16 @@ public class WaveSpawner : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
+ 
     {
+        // de gamemanagerscript linken
         Gamemanager = GameObject.Find("gamemanager").GetComponent<gamemanager>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        // als de game is gestart en er geen badguys zijn spawn de volgende wave badguys
     if (Gamemanager.Gameisrunning == true && countdown <= 0 && Gamemanager.enemiesLeft == 0)
         {
             StartCoroutine(spawnwave()); 
@@ -40,6 +38,7 @@ public class WaveSpawner : MonoBehaviour
        
     }
 
+    // functie voor het spawnen van een aantal badguys
     IEnumerator spawnwave()
     {
         wavenumber += 1;
@@ -53,6 +52,7 @@ public class WaveSpawner : MonoBehaviour
     }
     void spawnbadguy()
     {
+        // een badguy spawnen in een willekeurige gang met een beetje offset voor de X en Z waarde 
         int index = Random.Range(0, spawnpoints.Count);
         float tempx = Random.Range(-xoffset, xoffset);
         float tempy = Random.Range(-yoffset, yoffset);

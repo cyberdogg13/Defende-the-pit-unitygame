@@ -11,6 +11,7 @@ public class diffecultybuttons : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // de compenten vaststellen
         Gamemanager = GameObject.Find("gamemanager").GetComponent<gamemanager>();
         button = GetComponent<Button>();
         button.onClick.AddListener(SetDifficulty);
@@ -23,6 +24,8 @@ public class diffecultybuttons : MonoBehaviour
     {
 
     }
+
+    // functie voor het doorgeven van de difficulty die geselecteerd is.
     void SetDifficulty()
     {
         Gamemanager.startgame(difficulty);

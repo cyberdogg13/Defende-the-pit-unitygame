@@ -22,6 +22,7 @@ public class gamemanager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // de compenten vaststellen
         wingameText.gameObject.SetActive(false);
         Titlescreen.gameObject.SetActive(true);
         Gameisrunning = false; 
@@ -32,8 +33,11 @@ public class gamemanager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //teller voor hoeveel badguys er nog leven in de huidige wave
         enemiesLeft = GameObject.FindGameObjectsWithTag("enemy").Length;
         enemiesleftText.text = "Enemiesleft: " + enemiesLeft;
+
+        //beindig de game zodra de benodigte punten zijn behaald
         if (score == winscore)
         {
             Gameisrunning = false;
@@ -41,12 +45,15 @@ public class gamemanager : MonoBehaviour
             wingameText.gameObject.SetActive(true);
         }
     }
+
+    //functie voor het toevoegen van een score
     public void UpdateScore(int ScoreToAdd)
     {
         score += ScoreToAdd;
         scoreText.text = "Score: " + score;
     }
 
+    // functie voor het beijndigen van de game
     public void gameover()
     {
         gameoverText.gameObject.SetActive(true);
@@ -54,6 +61,8 @@ public class gamemanager : MonoBehaviour
         Gameisrunning = false;
 
     }
+
+    // functie voor het starten van de gam e en het vast stellen van de winscore
     public void startgame(int difficulty)
     {
         winscore = 75 * difficulty;
@@ -64,6 +73,8 @@ public class gamemanager : MonoBehaviour
 
 
     }
+
+    // functie voor het herstarten van de game
     public void restartgame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);

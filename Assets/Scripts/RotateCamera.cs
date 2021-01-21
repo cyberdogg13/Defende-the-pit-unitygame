@@ -14,6 +14,8 @@ public class RotateCamera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        // als je op D of A drukt roteert de camera 90 graden
         if(Input.GetKeyDown(KeyCode.D))
         {
             transform.Rotate(0f, 90f, 0f);

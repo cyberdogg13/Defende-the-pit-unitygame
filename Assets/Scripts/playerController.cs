@@ -21,6 +21,7 @@ public class playerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // de compenten vaststellen
         playerAudio = GetComponent<AudioSource>();
         Gamemanager = GameObject.Find("gamemanager").GetComponent<gamemanager>();
 
@@ -29,8 +30,10 @@ public class playerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       // Debug.Log("firerate= " + firerate);
+       // een coldown timer voor het schieten zodat je niet oneindig vaak kan schietten achter eklaar
         firerate -= Time.deltaTime;
+
+        // als de game is gestart beweeg de turret naar de muis locatie
         if (Gamemanager.Gameisrunning == true)
         {
             Vector3 mouselocation = Input.mousePosition;

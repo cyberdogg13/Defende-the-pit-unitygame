@@ -11,6 +11,7 @@ public class bullet : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // componenten vastellen
         bulletAudio = GetComponent<AudioSource>();
         Gamemanager = GameObject.Find("gamemanager").GetComponent<gamemanager>();
     }
@@ -24,19 +25,21 @@ public class bullet : MonoBehaviour
             Destroy(gameObject);
         }
 
-
+        // beweegt de kogel naar voren
         transform.Translate(Vector3.forward * Time.deltaTime * 40);
 
         
     }
     private void OnCollisionEnter(Collision collision)
     {
+        //check of de kogel een muur raakt en verwijder deze als hij nog geen badguy heeft aan geraakt.
         if (collision.gameObject.CompareTag("wall") || collision.gameObject.CompareTag("floor") && !bulletAudio.isPlaying)
         {
             Destroy(gameObject);
             Debug.Log("kogel raakt een muur/vloer");
         }
 
+        // als de kogel een badguy raakt maak de kogel ontzichtbaar en speel een killsound
         if (collision.gameObject.CompareTag("enemy"))
         {
             GetComponent<Collider>().enabled = false;
